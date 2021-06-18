@@ -1,0 +1,144 @@
+@import '../settings';
+@import '../colours';
+@import '../mixins';
+@import '../franklin-settings';
+@import '../common/z-index';
+
+.data-table {
+  $self: &;
+  border: 0;
+  border-collapse: collapse;
+  text-align: left;
+  width: 100%;
+
+  input[type='checkbox'] {
+    margin: 0;
+  }
+
+  &--fixed {
+    table-layout: fixed;
+  }
+
+  // table header cell, without any specific modifier applied
+  & th {
+    width: auto;
+    border: 0;
+    padding: 0.25rem 0.5rem;
+    font-weight: bold;
+    white-space: nowrap;
+    color: $colour-sky-white;
+    background-color: $colour-sea-blue;
+    top: 0;
+    z-index: $z-index-low;
+    position: sticky;
+
+    &.data-table__header-cell {
+      &--sortable {
+        cursor: pointer;
+
+        &::after {
+          content: '▲';
+          display: inline-block;
+          font-size: 0.6em;
+          margin: 0 0.8em;
+          opacity: 0.7;
+          transition: transform ease-out 0.5s;
+          transform: rotateX(0);
+
+          @media (prefers-reduced-motion: reduce) {
+            transition-duration: 0s;
+          }
+        }
+
+        &:hover::after {
+          opacity: 1;
+        }
+      }
+
+      &--ascend,
+      &--descend {
+        &::after {
+          opacity: 1;
+        }
+      }
+
+      &--ascend {
+        &:hover::after {
+          transform: rotateX(0.5turn);
+        }
+      }
+
+      &--descend {
+        &::after {
+          transform: rotateX(0.5turn);
+        }
+        &:hover::after {
+          transform: rotateX(0);
+        }
+      }
+
+      &--checkbox {
+        // This doesn't have an effect unless `table-layout: fixed`
+        width: 1.5rem;
+      }
+    }
+  }
+  // table row, without any specific modifier applied
+  & tr {
+    &:nth-of-type(2n) {
+      background-color: $colour-platinum;
+    }
+  }
+
+  &__row {
+    &--selected {
+      background-color: $colour-selected;
+    }
+  }
+
+  // table body cell, without any specific modifier applied
+  & td {
+    padding: 0.5rem;
+    vertical-align: top;
+    border: 0;
+    border-bottom: 1px solid $colour-sky-white;
+  }
+
+  &--optimised-rendering td {
+    /** notes: do not use if:
+      *  - height of row is really tall or variable (scroll bar will jump)
+      *  - column width changes (should be fine with "fixedLayout")
+      */
+    content-visibility: auto; // avoid rendering rows that are out of view
+    contain-intrinsic-size: 1px 2em; // assume minimum size of one line + margin
+  }
+
+  &__cell {
+    &--warning {
+      background-color: map-get($foundation-palette, warning);
+    }
+
+    &--loading {
+      text-align: center;
+    }
+
+    &--ellipsis {
+      @include ellipsis();
+    }
+  }
+
+  &--compact {
+    font-size: $font-size-medium;
+    #{ $self }__header-cell,
+    #{ $self }__cell {
+      padding: 0.25;
+    }
+  }
+
+  & .expandable-list {
+    button,
+    a {
+      white-space: nowrap;
+    }
+  }
+}

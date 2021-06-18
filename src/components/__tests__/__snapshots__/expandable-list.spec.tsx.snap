@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ExpandableList should render 1`] = `
+<DocumentFragment>
+  <ul
+    class="expandable-list no-bullet"
+  >
+    <li>
+      some content 0
+    </li>
+    <li>
+      some content 1
+    </li>
+    <li>
+      some content 2
+    </li>
+    <li>
+      some content 3
+    </li>
+    <li>
+      some content 4
+    </li>
+    <li>
+      <button
+        class="button tertiary expandable-list__action"
+        data-testid="expandable-message"
+        type="button"
+      >
+        More foo
+      </button>
+    </li>
+  </ul>
+</DocumentFragment>
+`;
+
+exports[`ExpandableMessage should render 1`] = `
+<DocumentFragment>
+  <button
+    class="button tertiary expandable-list__action"
+    data-testid="expandable-message"
+    type="button"
+  >
+    More foo
+  </button>
+</DocumentFragment>
+`;

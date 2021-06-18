@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Autocomplete component should render 1`] = `
+<DocumentFragment>
+  <div
+    class="autocomplete-container"
+  >
+    <span
+      class="search-input"
+    >
+      <input
+        data-testid="search-input"
+        placeholder=""
+        type="text"
+        value=""
+      />
+      <span
+        class="search-input__suffix"
+        data-testid="search-input-suffix"
+        role="presentation"
+      >
+        <test-file-stub
+          height="14"
+          width="14"
+        />
+      </span>
+    </span>
+    <div
+      class="autocomplete-menu"
+    >
+      <div
+        class="dropdown-menu__panel"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Autocomplete component should render with props: showDropdownUpdated & clearOnSelect 1`] = `
+<DocumentFragment>
+  <div
+    class="autocomplete-container"
+  >
+    <span
+      class="search-input"
+    >
+      <input
+        data-testid="search-input"
+        placeholder=""
+        type="text"
+        value=""
+      />
+      <span
+        class="search-input__suffix"
+        data-testid="search-input-suffix"
+        role="presentation"
+      >
+        <test-file-stub
+          height="14"
+          width="14"
+        />
+      </span>
+    </span>
+    <div
+      class="autocomplete-menu"
+    >
+      <div
+        class="dropdown-menu__panel"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;

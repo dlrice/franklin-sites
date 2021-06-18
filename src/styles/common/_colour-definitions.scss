@@ -1,0 +1,133 @@
+@import '../colours';
+
+// PRIMARY
+.colour-sapphire-blue {
+  background: $colour-sapphire-blue;
+  color: $colour-sky-white;
+}
+.colour-sea-blue {
+  background: $colour-sea-blue;
+  color: $colour-sky-white;
+}
+.colour-vivid-cerulean {
+  background: $colour-vivid-cerulean;
+  color: $colour-sky-white;
+}
+.colour-medium-turquoise {
+  background: $colour-medium-turquoise;
+  color: $colour-yankees-blue;
+}
+.colour-gainsborough {
+  background: $colour-gainsborough;
+  color: $colour-yankees-blue;
+}
+
+// GREY
+.colour-yankees-blue {
+  background: $colour-yankees-blue;
+  color: $colour-sky-white;
+}
+.colour-independence {
+  background: $colour-independence;
+  color: $colour-sky-white;
+}
+.colour-weldon-blue {
+  background: $colour-weldon-blue;
+  color: $colour-sky-white;
+}
+.colour-pastel-blue {
+  background: $colour-pastel-blue;
+  color: $colour-yankees-blue;
+}
+.colour-platinum {
+  background: $colour-platinum;
+  color: $colour-yankees-blue;
+}
+.colour-sky-white {
+  background: $colour-sky-white;
+  color: $colour-yankees-blue;
+}
+// CURATION
+.colour-reviewed {
+  background: $colour-reviewed;
+  color: $colour-yankees-blue;
+}
+.colour-unreviewed {
+  background: $colour-unreviewed;
+  color: $colour-yankees-blue;
+}
+// NAMESPACE
+.colour-uniref {
+  background: $colour-uniref;
+  color: $colour-yankees-blue;
+}
+.colour-uniparc {
+  background: $colour-uniparc;
+  color: $colour-yankees-blue;
+}
+.colour-proteomes {
+  background: $colour-proteomes;
+  color: $colour-sky-white;
+}
+.colour-peptide-search {
+  background: $colour-peptide-search;
+  color: $colour-sky-white;
+}
+.colour-id-mapping {
+  background: $colour-id-mapping;
+  color: $colour-sky-white;
+}
+.colour-blast {
+  background: $colour-blast;
+  color: $colour-sky-white;
+}
+.colour-align {
+  background: $colour-align;
+  color: $colour-sky-white;
+}
+
+// svg fills
+.svg-colour-reviewed svg {
+  color: $colour-reviewed;
+}
+.svg-colour-unreviewed svg {
+  color: $colour-unreviewed;
+}
+
+// messages
+.colour-warning {
+  background: $colour-warning;
+}
+.colour-failure {
+  background: $colour-failure;
+}
+.colour-success {
+  background: $colour-success;
+}
+.colour-info {
+  background: $colour-info;
+}
+
+// Data visualisation
+.colour-coyote-brown {
+  background: $colour-coyote-brown;
+}
+.colour-outer-space {
+  background: $colour-outer-space;
+}
+
+.box-colour {
+  vertical-align: top;
+  display: inline-block;
+  width: 9em;
+  height: 9em;
+  margin-bottom: 4em;
+  font-size: $small-font-size;
+  &:before {
+    content: attr(data-name);
+    color: $colour-yankees-blue;
+    margin-top: 10em;
+    display: block;
+    text-align: center;
+  }
+}

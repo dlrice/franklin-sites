@@ -1,0 +1,27 @@
+.expandable-list {
+  margin-bottom: 0;
+
+  li:not(:first-child) {
+    button {
+      margin-top: 0;
+    }
+  }
+
+  button,
+  a {
+    .facets &:not(.expandable-list__action) {
+      color: initial;
+      font-weight: initial;
+    }
+
+    &.expandable-list__action {
+      display: inline-block;
+      width: auto;
+      margin: 0.5rem 2ch 0.5rem 0;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}

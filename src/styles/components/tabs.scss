@@ -1,0 +1,31 @@
+@import '../settings';
+@import '../colours';
+
+.tabs {
+  &__header {
+    width: 100%;
+    white-space: nowrap;
+    overflow-x: auto;
+    border-bottom: 0.0625rem solid $colour-platinum;
+    margin-bottom: $global-margin;
+
+    &__item {
+      display: inline-block;
+      padding: $global-padding;
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+
+      &:hover,
+      &:focus {
+        color: $colour-sea-blue;
+      }
+
+      &--active {
+        border-bottom: 0.1rem solid $colour-sea-blue;
+      }
+    }
+  }
+}

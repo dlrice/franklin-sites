@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AutocompleteItem component should render 1`] = `
+<DocumentFragment>
+  <li
+    data-testid="autocomplete-item"
+  >
+    <button
+      class=""
+      type="button"
+    >
+      A path to &gt; some 
+      <b>
+        item
+      </b>
+    </button>
+  </li>
+</DocumentFragment>
+`;

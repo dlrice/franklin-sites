@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Hero Container component should render 1`] = `
+<DocumentFragment>
+  <section
+    class="hero-container hero-container--side-padding"
+  >
+    <h2
+      class="hero-container__title medium"
+    >
+      Title
+    </h2>
+    <p>
+      Body content
+    </p>
+  </section>
+</DocumentFragment>
+`;

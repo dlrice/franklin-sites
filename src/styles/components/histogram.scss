@@ -1,0 +1,53 @@
+@import '../colours';
+
+.histogram {
+  --main-color: var(--main-histogram-color, #{$colour-weldon-blue});
+  --out-range-color: var(--out-range-histogram-color, #{$colour-platinum});
+  // -1px to avoid artifacts by overlapping a bit
+  --bar-margin: calc(var(--histogram-bar-gap, -1px) * 0.5);
+
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  & svg {
+    position: absolute;
+    overflow: visible;
+
+    &.y-axis {
+      left: -50px;
+    }
+  }
+
+  &__bar-container,
+  &__bar-shadow-container {
+    display: flex;
+    width: 100%;
+    overflow: hidden; // hide overflow caused by the "bouncy" transition
+  }
+
+  &__bar-shadow-container {
+    opacity: 0;
+    position: absolute;
+  }
+
+  &__bar {
+    background-color: $colour-platinum;
+    background-color: var(--out-range-color);
+    display: inline-block;
+    border-top-left-radius: 1px;
+    border-top-right-radius: 1px;
+    margin: 0 -0.5px;
+    margin: 0 var(--bar-margin);
+    flex: 1 1 0%;
+    transform-origin: bottom left;
+    transform: scaleY(0);
+    transition: transform cubic-bezier(0.47, 2, 0.41, 0.8) 250ms;
+
+    &--within-range {
+      background-color: $colour-weldon-blue;
+      background-color: var(--main-color);
+    }
+  }
+}

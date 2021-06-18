@@ -1,0 +1,92 @@
+@import '../settings';
+@import '../colours';
+
+.button {
+  --main-color: var(--main-button-color, #{$colour-sea-blue});
+
+  user-select: none;
+
+  &.dropdown::after {
+    border-color: currentColor transparent transparent;
+  }
+
+  svg {
+    width: 0.9rem;
+    height: 0.9rem;
+    margin-top: -0.2rem;
+    margin-right: 0.5rem;
+    vertical-align: middle;
+    fill: $colour-sky-white;
+  }
+
+  &.large-icon svg {
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-top: -0.2rem;
+    margin-right: 0.5rem;
+  }
+
+  &.primary {
+    &,
+    &.disabled {
+      background-color: $colour-sea-blue;
+      background-color: var(--main-color);
+    }
+
+    &:hover,
+    &:focus,
+    &:focus-within {
+      background-color: $colour-sea-blue;
+      background-color: var(--main-color);
+      filter: brightness(90%);
+    }
+  }
+
+  &.secondary {
+    &,
+    &.disabled {
+      color: $colour-sea-blue;
+      color: var(--main-color);
+      border: 0.1rem solid currentColor;
+      font-weight: 700;
+
+      svg {
+        fill: currentColor;
+      }
+    }
+  }
+
+  &.tertiary {
+    background: none;
+    color: $colour-sea-blue;
+    color: var(--main-color);
+    font-weight: $global-weight-bold;
+    padding: 0;
+    line-height: 1.6;
+    text-align: left;
+
+    &:hover:disabled {
+      color: $colour-sea-blue;
+      color: var(--main-color);
+      background-color: $colour-sky-white;
+    }
+
+    svg {
+      fill: currentColor;
+    }
+
+    &.tertiary-icon__active {
+      svg {
+        fill: $colour-platinum;
+      }
+    }
+  }
+}
+
+.button-group {
+  margin-bottom: $global-margin * 0.5;
+
+  .tertiary {
+    margin-right: 1rem;
+  }
+}

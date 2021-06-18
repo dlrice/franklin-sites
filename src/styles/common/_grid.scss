@@ -1,0 +1,40 @@
+@import '../settings';
+@import '../colours';
+
+$grid-name: 'uniprot-grid';
+$gap: 1rem;
+// Needs to be absolute value, otherwise grid width will change depending on
+// where in the page we use it
+$max-width: 67rem; // ±1070px with Lato 16px base as per mockup
+$n-columns: 12;
+
+/* uniprot-website grid system */
+.#{$grid-name} {
+  display: grid;
+  gap: $gap; /* or we can implement that differently */
+  grid-template-columns: repeat(12, 1fr);
+
+  & > .#{$grid-name}-cell {
+    @for $i from 1 through $n-columns {
+      &--span-#{$i} {
+        grid-column: auto / span $i;
+      }
+    }
+
+    @for $i from 1 through $n-columns {
+      &--offset-#{$i} {
+        grid-column-start: $i + 1;
+      }
+    }
+  }
+}
+
+.#{$grid-name}--centered {
+  margin-left: auto;
+  width: calc(min(95vw, #{$max-width}));
+  margin-right: auto;
+}
+
+.#{$grid-name}--with-bleed {
+  box-shadow: -$gap 0 var(--grid-background), $gap 0 var(--grid-background);
+}

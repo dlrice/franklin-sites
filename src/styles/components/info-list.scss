@@ -1,0 +1,14 @@
+@import '../settings';
+@import '../colours';
+@import '../mixins.scss';
+
+$decorative-bar: 0.125rem solid $colour-vivid-cerulean;
+
+.info-list {
+  margin: $global-margin 0 2 * $global-margin 0;
+  list-style: none;
+}
+
+@include breakpoint(medium) {
+  @include columns('info-list', 'decorated-list-item', 2);
+}

@@ -1,0 +1,109 @@
+@import '../settings';
+@import '../colours';
+@import '../mixins';
+
+$shadow-padding: 0.125rem;
+$card-link-padding: 0.5rem;
+
+.card {
+  @include box-shadow($shadow-padding);
+  background-color: $colour-sky-white;
+  border-radius: 0.2rem;
+  margin: $global-margin $shadow-padding;
+  width: calc(100% - #{$global-padding});
+  position: relative;
+
+  &__link {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    cursor: pointer;
+  }
+
+  &__container,
+  &__actions {
+    position: relative;
+  }
+
+  &--has-link {
+    transition: 0.5s background-color ease;
+
+    &:hover,
+    &:focus-within {
+      background-color: scale-color($color: $colour-platinum, $lightness: 40%);
+    }
+
+    * {
+      pointer-events: none;
+    }
+
+    a,
+    button,
+    input,
+    label {
+      pointer-events: initial;
+    }
+  }
+
+  &__content {
+    padding: $global-padding;
+  }
+
+  &__header {
+    display: flex;
+    align-items: baseline;
+    padding-left: $global-padding;
+
+    &--with-separator {
+      border-bottom: 0.125rem solid $colour-platinum;
+    }
+
+    & > * {
+      margin: 0;
+    }
+
+    & > *:not(:last-child) {
+      margin-right: $global-margin;
+    }
+
+    &:not(&--with-separator) + .card__content {
+      padding-top: 0;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 0;
+    background-color: $colour-selected;
+  }
+}
+
+.card-action {
+  margin: 0;
+  padding: $card-link-padding;
+  font-weight: 600;
+  white-space: nowrap;
+  background-color: $colour-gainsborough;
+
+  &:hover,
+  &:focus,
+  &:focus-within {
+    transition: 0.5s background-color ease;
+    background-color: $colour-hover;
+  }
+
+  &:not(:first-child)::before {
+    content: ' · ';
+    margin-left: -$card-link-padding;
+    margin-right: $card-link-padding;
+  }
+
+  &--active {
+    background-color: scale-color($color: $colour-platinum, $lightness: 20%);
+  }
+}

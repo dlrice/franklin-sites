@@ -1,0 +1,108 @@
+@import '../settings';
+@import '../colours';
+
+button.evidence-tag {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  font-size: $small-font-size;
+  white-space: nowrap;
+  font-size: 0.75rem;
+  height: 1.25rem;
+  line-height: 1.25rem;
+  margin-left: $global-margin * 0.5;
+  border-radius: $global-padding * 0.25;
+  background-color: $colour-gainsborough;
+  border: 1px solid $colour-weldon-blue;
+  padding: 0 $global-padding * 0.25;
+  color: $colour-yankees-blue;
+
+  &:hover,
+  &:focus,
+  &:focus-within {
+    background-color: $colour-pastel-blue;
+  }
+
+  &:active {
+    background-color: rgba($colour-independence, 0.3);
+  }
+
+  svg {
+    position: absolute;
+  }
+}
+
+.evidence-tag__label {
+  padding-left: ($global-padding);
+  text-transform: capitalize;
+}
+
+.evidence-tag-content {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: none;
+  display: inline;
+  /* shadow trick from http://lea.verou.me/2012/04/background-attachment-local/ */
+  background:
+    /* Shadow covers */ linear-gradient(
+      $colour-platinum 30%,
+      rgba(255, 255, 255, 0)
+    ),
+    linear-gradient(rgba(255, 255, 255, 0), $colour-platinum 70%) 0 100%,
+    /* Shadows */
+      radial-gradient(
+        50% 0,
+        farthest-side,
+        rgba(0, 0, 0, 0.2),
+        rgba(0, 0, 0, 0)
+      ),
+    radial-gradient(
+        50% 100%,
+        farthest-side,
+        rgba(0, 0, 0, 0.2),
+        rgba(0, 0, 0, 0)
+      )
+      0 100%;
+  background:
+  /* Shadow covers */ linear-gradient(
+      $colour-platinum 30%,
+      rgba(255, 255, 255, 0)
+    ),
+    linear-gradient(rgba(255, 255, 255, 0), $colour-platinum 70%) 0 100%,
+    /* Shadows */
+      radial-gradient(
+        farthest-side at 50% 0,
+        rgba(0, 0, 0, 0.2),
+        rgba(0, 0, 0, 0)
+      ),
+    radial-gradient(
+        farthest-side at 50% 100%,
+        rgba(0, 0, 0, 0.2),
+        rgba(0, 0, 0, 0)
+      )
+      0 100%;
+  background-repeat: no-repeat;
+  background-color: $colour-platinum;
+  background-size: 100% 40px, 100% 40px, 100% 14px, 100% 14px;
+  /* Opera doesn't support this in the shorthand */
+  background-attachment: local, local, scroll, scroll;
+
+  & > div {
+    display: none;
+  }
+
+  &--visible {
+    opacity: 1;
+    margin: $global-margin 0;
+    padding: $global-padding;
+    max-height: 25vh;
+    overflow-y: auto;
+    transition: opacity 0.5s ease-out;
+    display: block;
+
+    & > div {
+      display: block;
+    }
+  }
+}

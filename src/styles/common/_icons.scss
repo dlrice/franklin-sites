@@ -1,0 +1,20 @@
+@import '../settings';
+@import '../colours';
+
+.icon {
+  &--reviewed {
+    color: $colour-reviewed;
+  }
+  &--unreviewed {
+    color: $colour-unreviewed;
+  }
+  &--uniparc {
+    color: $colour-uniparc;
+  }
+  &--reference-proteome {
+    color: $colour-reference-proteome;
+  }
+  &--community-annotation {
+    color: $colour-vivid-cerulean;
+  }
+}
